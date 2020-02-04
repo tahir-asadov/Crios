@@ -1,0 +1,146 @@
+/* ==========================================================================
+   [Helper classes]
+========================================================================== */
+/* No-nos */
+.nopadding {
+    padding: 0;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.noclick {
+    pointer-events: none;
+}
+/* Clear */
+.clear {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+/* Line and space */
+.line {
+    width: 100%;
+    display: block;
+    clear: both;
+    border-top: #c3c3c3 solid 1px;
+    margin-top: 40px;
+    padding-top: 40px;
+    }
+.line-dotted {
+    border-top: #c3c3c3 dotted 1px;
+}
+.line-dashed {
+    border-top: #c3c3c3 dashed 1px;
+}
+.space {
+    width: 100%;
+    height: 10px;
+    clear: both;
+    display: block;
+}
+/* Selections */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/*--------------------------------------------------------------------
+[Dropdown menu]
+--------------------------------------------------------------------*/
+/* General */
+.dropdown {text-align: right;}
+.dropdown ul {margin: 0;padding: 0;}
+.dropdown ul li {list-style: none;display: inline-block;}
+.dropdown ul li a {color: #fff;font-size: 13px;line-height: 49px;padding: 10px;text-decoration: none;font-weight: bold;text-transform: uppercase;}
+/* Parent */
+.dropdown > ul {}
+.dropdown > ul > li {position: relative;}
+.dropdown > ul > li > a {padding: 15px 30px;display: inline-block;text-align: center;width: 130px;}
+.dropdown > ul > li:hover > a {color: #17DAA3;}
+.dropdown > ul > li:hover > ul {opacity: 1;transform: scale(1) translateY(0);visibility: visible;}
+/* Children */
+.dropdown > ul > li > ul {transform-origin: center top;transition: all 100ms linear;position: absolute;left: 0;transform: scale(.5) translateY(200px);opacity:0;visibility: hidden;}
+.dropdown > ul > li > ul {border-radius: 5px;box-shadow: 0px 0px 6px -1px black;background:RGBA(23, 218, 163, .9);width: 130px;}
+.dropdown > ul > li > ul li {width: 100%;position: relative;}
+.dropdown > ul > li > ul li a {display: inline-block;width: 130px;text-align: center;line-height: 30px;color: white;}
+
+.dropdown > ul > li > ul li ul {border-radius: 5px;box-shadow: 0px 0px 6px -1px black;background:RGBA(23, 218, 163, .9);width: 130px;visibility: hidden;}
+.dropdown > ul > li > ul li ul {position: absolute;top: 0;left: 130px;transform-origin: right top;z-index: 2;transition: all 100ms linear;transform: scale(.5) translateX(200px);opacity:0;}
+.dropdown > ul > li > ul li:hover > ul {opacity: 1;transform: scale(1) translateY(0);visibility: visible;}
+.dropdown > ul > li > ul li:hover > a {color: black;}
+/* ==========================================================================
+   [Section]
+========================================================================== */
+.section {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin: 20px 0;
+}
+.section > div > div > div {
+    transition: all 300ms ease-in-out;
+}
+/* ==========================================================================
+   [Sticky header]
+========================================================================== */
+.sticky {
+    height: 60px;
+    transition: all 300ms ease-in-out;
+}
+.sticky.sticked {
+    animation: sticky 1000ms ease-in-out;
+    position: fixed;
+    z-index: 4;
+}
+@keyframes sticky {
+    0% {
+        top: -300px;
+        opacity: 0.7;
+        transform: scale(.7);
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* ==========================================================================
+   [Animations]
+========================================================================== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes fromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
